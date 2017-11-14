@@ -172,19 +172,19 @@ public class Main {
                     
                     
                     
-                    System.out.println("Ingrese las cordenadas de B: ");
+                    System.out.println("Ingrese las cordenadas de la altura: ");
                     
                     crdB = leer.nextDouble();
                     
                     
                     
-                    System.out.println("Ingrese las cordenadas de C: ");
+                    System.out.println("Ingrese las cordenadas de parte superior: ");
                     
                     crdC = leer.nextDouble();
                     
                     
                     
-                    System.out.println("Ingrese las cordenadas de D: ");
+                    System.out.println("Ingrese las cordenadas de lado x1: ");
                     
                     crdD = leer.nextDouble();
                     
