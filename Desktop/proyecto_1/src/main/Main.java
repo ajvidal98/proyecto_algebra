@@ -30,6 +30,10 @@ public class Main {
         double basecuadrado=0.0;
         double alturacuadrado=0.0;
         double areacuadrado=0.0;
+        double area_trapecio =0.0;
+        double perimetro_trapecio=0.0;
+        double alturatr =4.0;
+        double n =0.0;
         int opc;
         int opcion;
         while(true){
@@ -45,6 +49,11 @@ public class Main {
             System.out.print("ingrese su opcion: ");
             opc = leer.nextInt();
             System.out.println("----------------------------------------");
+            
+            if(opc != 1 && opc != 2){
+                System.out.println("profe, no se ponga tierno. es solo numeros.  XD");
+                continue;
+            }
             
             if(opc == 1){
                 System.out.println("                                             ");
@@ -179,7 +188,7 @@ public class Main {
                 if(opc == 2){
                     System.out.println("                                         ");
                     System.out.println("-----------------------------------------");
-                    System.out.println("Ingrese las cordenadas de la base: ");
+                    System.out.println("Ingrese las cordenadas de la base(A) : ");
                     System.out.println("-----------------------------------------");
                     
                     crdA = leer.nextDouble();
@@ -187,14 +196,14 @@ public class Main {
                     
                     System.out.println("                                         ");
                     System.out.println("-----------------------------------------");
-                    System.out.println("Ingrese las cordenadas de la altura: ");
+                    System.out.println("Ingrese las cordenadas de la parte superior(B) : ");
                     System.out.println("-----------------------------------------");
                     crdB = leer.nextDouble();
                     
                     
                     System.out.println("                                         ");
                     System.out.println("-----------------------------------------");
-                    System.out.println("Ingrese las cordenadas de parte superior: ");
+                    System.out.println("Ingrese las cordenadas de parte isquierda(C) : ");
                     System.out.println("-----------------------------------------");
                     
                     crdC = leer.nextDouble();
@@ -202,7 +211,7 @@ public class Main {
                     
                     System.out.println("                                         ");
                     System.out.println("-----------------------------------------");
-                    System.out.println("Ingrese las cordenadas de lado x1: ");
+                    System.out.println("Ingrese las cordenadas de lado derecho(D) : ");
                     System.out.println("-----------------------------------------");
                     
                     crdD = leer.nextDouble();
@@ -220,7 +229,7 @@ public class Main {
                         opcion = leer.nextInt();
                         
                         if(opcion == 1){
-                          areacuadrado =(crdA * crdB);
+                          areacuadrado =(crdA * crdC);
                             System.out.println("---------------------------------------");
                             System.out.println("la figura ingresada es un cuadrado.");
                             System.out.println("---------------------------------------");
@@ -267,9 +276,9 @@ public class Main {
                         }
                         
                     }else{
-                        perimetro_rectangulo = crdA + crdA + crdB + crdB;
+                        perimetro_rectangulo = crdA + crdA + crdC + crdC;
                         arearectangulo = crdA * crdB;
-                        if(crdA == crdC){
+                        if(crdA == crdB && crdC ==crdD){
                             
                             System.out.println("---------------------------------------");
                             System.out.println("la figura ingresada es un rectangulo.");
@@ -290,6 +299,36 @@ public class Main {
                             System.out.println("el area del cuadrado es: "+areacuadrado);
                             System.out.println("-------------------------------------------------");
                             System.out.println("el perimetro del cuadrado es: "+perimetro_rectangulo);
+                            
+                        }else{
+                            n= crdA - crdB/2;
+                            alturatr = crdC *crdC -n * n;
+                            System.out.println((double)Math.round(alturatr * 3));
+                            area_trapecio = crdA + crdB * alturatr/2;
+                            perimetro_trapecio= crdA + crdB + crdC*2;
+                            if(crdC == crdD && crdA != crdB){
+                                System.out.println("-------------------------------------------------");
+                                System.out.println("la figura ingresada es un trapecio");
+                                System.out.println("-------------------------------------------------");
+                                System.out.println("");
+                                System.out.println("                                                 ");
+                                System.out.println("                                                 ");
+                                System.out.println("                                                 ");
+                                System.out.println("                                                 ");
+                                System.out.println("                                                 ");
+                                System.out.println("              *******************");
+                                System.out.println("            * |                    *  ");
+                                System.out.println("          *h: |"+alturatr+          "*   " );
+                                System.out.println("        *     |                        *  ");
+                                System.out.println("      ************************************  ");
+                                System.out.println("                                                  ");
+                                System.out.println("                                                 ");
+                                System.out.println("                                                 ");
+                                System.out.println("-------------------------------------------------");
+                                System.out.println("el area del trapecio es: "+area_trapecio);
+                                System.out.println("-------------------------------------------------");
+                                System.out.println("el perimetro del trapecio es: "+perimetro_trapecio);
+                            }
                         }
                     }
                     
